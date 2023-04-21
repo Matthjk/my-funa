@@ -30,14 +30,18 @@ const CardFuna = (props) => {
 
     const handleClose = () => {
         setOpen(false);
+
+    };
+
+    const funar = () => {
         axios.post('https://6442db6776540ce22597173e.mockapi.io/funados', { nombre: nombre, motivo: motivo, fecha: new Date().toISOString(), dias: data }).then((response) => { 
             axios.post('https://6442db6776540ce22597173e.mockapi.io/funa', { fecha: new Date().toISOString() }).then((response) => {
                 setClicks(clicks + 1);
                 props.onHttpRequest(clicks);
             });
         });
-
-    };
+        setOpen(false);
+    }
 
 
     React.useEffect(() => {
@@ -102,7 +106,8 @@ const CardFuna = (props) => {
                         />
                     </DialogContent>
                     <DialogActions>
-                        <Button onClick={handleClose}>Funar</Button>
+                        <Button onClick={handleClose}>Cancelar</Button>
+                        <Button onClick={funar}>Funar</Button>
                     </DialogActions>
                 </Dialog>
             </Box>
