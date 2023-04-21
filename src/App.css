@@ -47,3 +47,11 @@
   left: 40%;
   margin: 0 0 0 -25px; /* Establece la altura del contenedor al 100% de la altura de la ventana del navegador */
 }
+
+.table {
+  position: absolute;
+  top: 60%;
+  left: 5%;/* Establece la altura del contenedor al 100% de la altura de la ventana del navegador */
+  width: 90%;
+  border-collapse: collapse;
+}
