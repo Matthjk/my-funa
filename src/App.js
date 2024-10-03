@@ -13,6 +13,7 @@ function App() {
   }
   useEffect(() => {
       async function fetchData() {
+        //cambia la api
         const response = await axios.get('https://6442db6776540ce22597173e.mockapi.io/funados');
         const modifiedData = response.data.map(item => {
           // Modificar la propiedad de fecha de cada objeto según tus necesidades
