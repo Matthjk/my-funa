@@ -34,6 +34,7 @@ const CardFuna = (props) => {
     };
 
     const funar = () => {
+        // cambiar direcciones de api 
         axios.post('https://6442db6776540ce22597173e.mockapi.io/funados', { nombre: nombre, motivo: motivo, fecha: new Date().toISOString(), dias: data }).then((response) => { 
             axios.post('https://6442db6776540ce22597173e.mockapi.io/funa', { fecha: new Date().toISOString() }).then((response) => {
                 setClicks(clicks + 1);
@@ -45,6 +46,7 @@ const CardFuna = (props) => {
 
 
     React.useEffect(() => {
+         // cambiar direcciones de api 
         axios.get('https://6442db6776540ce22597173e.mockapi.io/funa').then((response) => {
             const date = new Date(Math.max.apply(null, response.data.map(function (e) {
                 return new Date(e.fecha);
