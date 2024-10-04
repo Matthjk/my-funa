@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
       async function fetchData() {
         //cambia la api
-        const response = await axios.get('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1');
+        const response = await axios.get('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1/Tabla1');
         const modifiedData = response.data.map(item => {
           // Modificar la propiedad de fecha de cada objeto según tus necesidades
           const newDate = new Date(item.fecha);
