@@ -35,8 +35,8 @@ const CardFuna = (props) => {
 
     const funar = () => {
         // cambiar direcciones de api 
-        axios.post('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1', { nombre: nombre, motivo: motivo, fecha: new Date().toISOString(), dias: data }).then((response) => { 
-            axios.post('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1', { fecha: new Date().toISOString() }).then((response) => {
+        axios.post('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1/Tabla1', { nombre: nombre, motivo: motivo, fecha: new Date().toISOString(), dias: data }).then((response) => { 
+            axios.post('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1/Tabla2', { fecha: new Date().toISOString() }).then((response) => {
                 setClicks(clicks + 1);
                 props.onHttpRequest(clicks);
             });
@@ -47,7 +47,7 @@ const CardFuna = (props) => {
 
     React.useEffect(() => {
          // cambiar direcciones de api 
-        axios.get('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1').then((response) => {
+        axios.get('https://66ffdf924da5bd2375524f96.mockapi.io/api/funa_v1/Tabla2').then((response) => {
             const date = new Date(Math.max.apply(null, response.data.map(function (e) {
                 return new Date(e.fecha);
             })));
